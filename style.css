@@ -1,40 +1,286 @@
-/*
-Error: Invalid CSS after "...serrat:400,700)": expected "{", was ";"
-        on line 4 of C:\Users\bjliuxuerui\Desktop\workspace\blog\style.scss
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* ------------ Core Style -------------- */
+body {
+  margin-top: 80px !important; }
 
-1: ---
-2: ---
-3: 
-4: @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-5: 
-6: /* ------------ Core Style -------------- *\/
-7: 
-8: body
-9: {
+i {
+  text-indent: 0; }
 
-Backtrace:
-C:\Users\bjliuxuerui\Desktop\workspace\blog\style.scss:4
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:650:in `block_contents'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
-D:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
-D:/Program Files (x86)/Koala/bin/sass:18:in `load'
-D:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...serrat:400,700)\": expected \"{\", was \";\"\A         on line 4 of C:\Users\bjliuxuerui\Desktop\workspace\blog\style.scss\A \A 1: ---\A 2: ---\A 3: \A 4: @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);\A 5: \A 6: /* ------------ Core Style -------------- */\A 7: \A 8: body\A 9: {"; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px; }
+
+th, td {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee; }
+
+th.title {
+  width: 30%; }
+
+#wrapper {
+  padding-left: 0;
+  transition: all 0.5s ease; }
+
+#wrapper.toggled {
+  padding-left: 180px; }
+
+#picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 5%;
+  background-size: cover;
+  margin-bottom: 8px; }
+
+.navigation {
+  font-size: 1.1em;
+  display: block; }
+
+.navigation ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+
+.navigation a {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background-color: #fff;
+  font-size: 13px;
+  line-height: normal;
+  font-style: normal;
+  color: #8C8C8C;
+  font-weight: 300; }
+
+a {
+  font-size: 18px;
+  font-family: HelveticaNeue;
+  color: #828282; }
+
+.navigation li {
+  line-height: 2.4rem;
+  font-weight: 300; }
+
+/* --------------- Sidebar --------------- */
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 180px;
+  width: 0;
+  height: 100%;
+  margin-left: -180px;
+  overflow-y: auto;
+  transition: all 0.5s ease; }
+
+#sidebar-wrapper p {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background-color: #fff;
+  font-size: 13px;
+  line-height: normal;
+  font-style: normal;
+  color: #8C8C8C;
+  font-weight: 300; }
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 180px; }
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  display: none;
+  overflow-x: hidden; }
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -180px; }
+
+/* --------------- Sidebar Nav --------------- */
+.sidebar-nav {
+  width: 180px;
+  margin: 0;
+  padding: 0;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  list-style: none; }
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 30px; }
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #AB9BA9; }
+
+li.li-no-hover:hover {
+  background: #4C9689 !important;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-radius: 5px 5px 5px 5px; }
+
+li.li-hover:hover {
+  background: #3E313C;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-radius: 5px 5px 5px 5px; }
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px; }
+
+.sidebar-nav > .sidebar-brand:hover {
+  background: #4D394B; }
+
+.sidebar-nav > .sidebar-brand a {
+  font-size: 18px;
+  font-weight: bold;
+  color: white; }
+
+.sidebar-nav > .sidebar-brand a:hover {
+  /* TBD */
+  color: #fff;
+  background: none; }
+
+.sidebar-nav > .sidebar-list-name a {
+  /* Force uppercase */
+  font-size: 14px;
+  font-weight: bold;
+  color: #B3A1AE;
+  pointer-events: none;
+  cursor: default; }
+
+.sidebar-nav > .sidebar-list-name a:hover {
+  /* TBD */
+  color: #B3A1AE;
+  background: none; }
+
+#social-icons {
+  font-size: 1.1em;
+  display: block; }
+
+#social-icons ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+
+#social-icons li {
+  display: inline-block;
+  padding-right: 15px; }
+
+#social-icons a {
+  font-size: 16px;
+  color: #a2a3a3; }
+
+#sidebar-middle {
+  margin-left: 13%; }
+
+/* --------------- Profile Footer --------------- */
+@media (min-width: 768px) {
+  #wrapper {
+    padding-left: 180px; }
+
+  #wrapper.toggled {
+    padding-left: 0; }
+
+  #sidebar-wrapper {
+    width: 180px; }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0; }
+
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative; }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0; } }
+.content {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #666;
+  font-weight: 300; }
+
+.content hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #F7F1F1;
+  border-bottom: 1px solid #fff; }
+
+.content h1 {
+  font-weight: normal;
+  color: #696969;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: bold; }
+
+.content h2 {
+  font-weight: normal;
+  margin-bottom: 5px;
+  color: #666666;
+  font-weight: bold; }
+
+.content h3 {
+  font-weight: normal;
+  margin-bottom: 5px;
+  color: #666666;
+  font-weight: bold; }
+
+.content p {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  font-weight: 300; }
+
+.content a {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: normal;
+  font-style: normal;
+  color: #8C8C8C;
+  font-weight: 300; }
+
+.content pre {
+  border: none;
+  width: 70%;
+  /* Generic font style */
+  font-family: Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 19.2px;
+  word-spacing: 0px;
+  color: #777777; }
+
+.content img {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  border-radius: 2px; }
+
+#flickr {
+  /* max-width: 195px;*/
+  /*  margin-left:-2px;*/ }
+
+#flickr .images a {
+  display: inline-block;
+  /*margin: 0.5em;*/ }
+
+#flickr img {
+  width: 75px;
+  height: 70px;
+  margin: -2px; }
+
+#flickr .images a img {
+  padding: 5px; }
+
+/*# sourceMappingURL=style.css.map */
