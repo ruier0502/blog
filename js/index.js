@@ -6,7 +6,7 @@
 
     Flickr.prototype = {
         init: function() {
-            this.user = "123194585@N06";
+            this.user = "ruier";
             this.album = "72157646849974903";
 
 

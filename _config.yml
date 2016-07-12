@@ -1,20 +1,20 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: ruier0502的Blog
+email: ruier0502@126.com
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 #url: "http://yourdomain.com" # the base hostname & protocol for your site
 
 # Sidebar settings
-description: One sentence introducing yourself or what you do
+description: 前端经验小总结
 
 # Social icons
 facebook: username
 linkedin: username
-github: username
+github: https://github.com/ruier0502
 deviantart: username
 codepen: username
 
-footer: © Taken theme
+footer: © ruier
 
 # Build settings
 markdown: kramdown
